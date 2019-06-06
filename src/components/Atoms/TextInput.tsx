@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 interface IProps {
   name: string;
   type?: 'password' | 'email' | 'text';
-  autoFocus: boolean;
+  autoFocus?: boolean;
   label: string;
   placeholder: string;
   value: string;
@@ -17,7 +17,7 @@ const TextInput: React.FC<IProps> = props => {
       required={true}
       name={props.name}
       type={props.type || 'text'}
-      autoFocus={props.autoFocus}
+      autoFocus={props.autoFocus || false}
       label={props.label}
       placeholder={props.placeholder}
       fullWidth={true}
