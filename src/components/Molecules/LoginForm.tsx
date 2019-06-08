@@ -10,7 +10,7 @@ const LoginForm: React.FC<{}> = () => {
   const changePassword = (e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
 
   return (
-    <form action="" method="POST">
+    <form action="https://trecamp-server.web.app/login" method="POST">
       <TextInput
         name="email"
         type="email"
