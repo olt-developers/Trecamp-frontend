@@ -6,11 +6,22 @@ import * as serviceWorker from './serviceWorker';
 import LoginForm from './components/Molecules/LoginForm';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
+const renderLoginForm = (url: string) => () => <LoginForm url={url} />;
+
 ReactDOM.render(
   <Router>
     <CssBaseline />
     <Route path="/" exact={true} component={App} />
-    <Route path="/login" exact={true} component={LoginForm} />
+    <Route
+      path="/login"
+      exact={true}
+      render={renderLoginForm('https://fe31b056.ngrok.io/trecamp-server/us-central1/api/login')}
+    />
+    <Route
+      path="/login_production"
+      exact={true}
+      render={renderLoginForm('https://trecamp-server.web.app/login')}
+    />
   </Router>,
   document.getElementById('root')
 );

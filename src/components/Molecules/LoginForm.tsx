@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import TextInput from '../Atoms/TextInput';
 import { Button } from '@material-ui/core';
 
-const LoginForm: React.FC<{}> = () => {
+interface IProps {
+  url: string;
+}
+
+const LoginForm: React.FC<IProps> = props => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -10,7 +14,7 @@ const LoginForm: React.FC<{}> = () => {
   const changePassword = (e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value);
 
   return (
-    <form action="https://trecamp-server.web.app/login" method="POST">
+    <form action={props.url} method="POST">
       <TextInput
         name="email"
         type="email"
