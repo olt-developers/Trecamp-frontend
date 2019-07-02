@@ -13,14 +13,14 @@ ReactDOM.render(
     <CssBaseline />
     <Route path="/" exact={true} component={App} />
     <Route
-      path="/login"
+      path="/lineLogin"
       exact={true}
-      render={renderLoginForm('https://fe31b056.ngrok.io/trecamp-server/us-central1/api/login')}
+      render={renderLoginForm('https://b1b22f9c.ngrok.io/trecamp-server/us-central1/api/lineLogin')}
     />
     <Route
       path="/login_production"
       exact={true}
-      render={renderLoginForm('https://trecamp-server.web.app/login')}
+      render={renderLoginForm('https://trecamp-server.web.app/lineLogin')}
     />
   </Router>,
   document.getElementById('root')
